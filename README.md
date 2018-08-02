@@ -39,6 +39,22 @@ You may also specify arguments via env variables.  E.x.
 PORT=3000 lt
 ```
 
+### configuration
+
+The localtunnel client can also be configured with an _optional_, YAML-based configuration file (`localtunnel.yml`). When launched, the client will work its way up the file tree in search of this file (starting from the current working directory). An example is shown below.
+
+```
+host: https://server.com
+# Some localtunnel servers require an authentication token
+token: VJtD3D6BXi9mZmqFT9ezAYq9fLjwUQ4WPZWUiaopRsy3HvMotRdhgbwiCuzrnhYv
+tunnels:
+  - subdomain: foobar
+    port: 3007
+  - subdomain: beagle
+    local_host: target-server.com
+    port: 3030
+```
+
 ## API ##
 
 The localtunnel client is also usable through an API (for test integration, automation, etc)
